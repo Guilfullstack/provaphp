@@ -59,6 +59,17 @@ class ProdutoService {
 
   return null;
 }
+public function alterarProduto($id, $novoNome, $novaMarca)
+{
+    $query = "UPDATE tb_produtos SET nome_produto = :novo_nome, marca_produto = :nova_marca WHERE cod_prodtuto = :cod_prodtuto";
+    $stmt = $this->conexao->Conectar()->prepare($query);
+    $stmt->bindValue(':novo_nome', $novoNome);
+    $stmt->bindValue(':nova_marca', $novaMarca);
+    $stmt->bindValue(':cod_prodtuto', $id);
+    $stmt->execute();
+
+    return $stmt->rowCount() > 0; // Retorna true se alguma linha foi afetada
+}
 
 }
 
