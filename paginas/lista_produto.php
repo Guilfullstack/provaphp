@@ -22,6 +22,7 @@
     $totalPaginas = $dadosProdutos['totalPaginas'];
     $paginaAtual = $dadosProdutos['paginaAtual'];
 
+    
     // Função para exibir os botões de página (limitado a 4 botões)
     function exibirBotoesPagina($paginaAtual, $totalPaginas) {
         $botoes = '';
@@ -64,6 +65,7 @@
                 <th>codigo</th>
                 <th>Nome do Produto</th>
                 <th>Marca do Produto</th>
+                <th>Remover</th>
             </tr>
         </thead>
         <tbody>
@@ -72,6 +74,7 @@
                     <td><?php echo $produto['cod_produto']; ?></td>
                     <td><?php echo $produto['nome_produto']; ?></td>
                     <td><?php echo $produto['marca_produto']; ?></td>
+                    <td><a href="../excluir_prod.php?cod_produto=<?php echo $produto['cod_produto']; ?>">Remover</a></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
@@ -83,6 +86,7 @@
         Páginas:
         <?php echo exibirBotoesPagina($paginaAtual, $totalPaginas); ?>
         </p>
+        
     </div>
 </body>
 </html>

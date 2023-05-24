@@ -1,22 +1,21 @@
+<!-- excluir_prod.php -->
 
 <?php
-    require_once 'pagina/src/produto.service.php';
+require 'paginas/src/produto.service.php';
 
-    // Verifica se o formulário foi enviado
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // Obtém os dados do formulário
-        $id = $_POST['cod_produto'];
-       // $novoNome = $_POST['novoNome'];
-        //$novaMarca = $_POST['novaMarca'];
+if (isset($_GET['cod_produto'])) {
+    $cod_produto = $_GET['cod_produto'];
 
-        // Cria uma instância do serviço de produto
-        $produtoService = new ProdutoService();
+    // Cria uma instância do serviço de produto
+    $produtoService = new ProdutoService();
 
-        // Chama a função de alterarProduto()
-        if ($produtoService->removerProduto($cod_produto)) {
-            echo "Produto remover com sucesso!";
-        } else {
-            echo "Erro ao remover o produto.";
-        }
+    // Chama o método para remover o produto
+    $removido = $produtoService->removerProduto($cod_produto);
+
+    if ($removido) {
+        header("Location: paginas/lista_produto.php");;
+    } else {
+        echo "Falha ao remover o produto.";
     }
-    ?>
+}
+?>

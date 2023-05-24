@@ -73,9 +73,9 @@ public function alterarProduto($id, $novoNome, $novaMarca)
 //REMOVER PRODUTO
 public function removerProduto($cod_produto)
 {
-    $query = "DELETE FROM tb_produtos WHERE cod_prodtuto = :cod_prodtuto";
+    $query = "DELETE FROM tb_produtos WHERE cod_produto = :cod_produto";
     $stmt = $this->conexao->Conectar()->prepare($query);
-    $stmt->bindValue(':cod_prodtuto', $cod_produto);
+    $stmt->bindValue(':cod_produto', $cod_produto);
     $stmt->execute();
 
     return $stmt->rowCount() > 0; // Retorna true se alguma linha foi afetada
