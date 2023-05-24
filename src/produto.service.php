@@ -70,6 +70,7 @@ public function alterarProduto($id, $novoNome, $novaMarca)
 
     return $stmt->rowCount() > 0; // Retorna true se alguma linha foi afetada
 }
+//REMOVER PRODUTO
 public function removerProduto($id)
 {
     $query = "DELETE FROM tb_produtos WHERE cod_prodtuto = :cod_prodtuto";
@@ -79,6 +80,17 @@ public function removerProduto($id)
 
     return $stmt->rowCount() > 0; // Retorna true se alguma linha foi afetada
 }
+
+public function listarProdutos()
+{
+    $query = "SELECT * FROM tb_produtos";
+    $stmt = $this->conexao->Conectar()->prepare($query);
+    $stmt->execute();
+
+    $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $produtos;
+}
+
 }
 
 ?>
