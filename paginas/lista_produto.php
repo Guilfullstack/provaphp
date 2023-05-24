@@ -74,7 +74,7 @@
                     <td><?php echo $produto['cod_produto']; ?></td>
                     <td><?php echo $produto['nome_produto']; ?></td>
                     <td><?php echo $produto['marca_produto']; ?></td>
-                    <td><a href="../excluir_prod.php?cod_produto=<?php echo $produto['cod_produto']; ?>">Remover</a></td>
+                    <td><a href="../excluir_prod.php?cod_produto=<?php echo $produto['cod_produto']; ?> "class="botao-remover">Remover</a></td>
                 </tr>
             <?php endforeach; ?>
         </tbody>
