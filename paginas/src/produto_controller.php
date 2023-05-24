@@ -14,6 +14,6 @@
 
 	$cadastroService = new ProdutoService();
 	$cadastroService->Salvar($cadastro);
-	header('Location', 'cadastro.html');
+	header('Location', '../inserir_prod.html');
 	
 ?>
