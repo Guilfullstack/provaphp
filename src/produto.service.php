@@ -70,7 +70,15 @@ public function alterarProduto($id, $novoNome, $novaMarca)
 
     return $stmt->rowCount() > 0; // Retorna true se alguma linha foi afetada
 }
+public function removerProduto($id)
+{
+    $query = "DELETE FROM tb_produtos WHERE cod_prodtuto = :cod_prodtuto";
+    $stmt = $this->conexao->Conectar()->prepare($query);
+    $stmt->bindValue(':cod_prodtuto', $id);
+    $stmt->execute();
 
+    return $stmt->rowCount() > 0; // Retorna true se alguma linha foi afetada
+}
 }
 
 ?>
