@@ -1,3 +1,3 @@
 <?php
-  require_once 'src/produto_controller.php';
+  require_once 'pagina/src/produto_controller.php';
 ?>

@@ -1,0 +1,81 @@
+table {
+    border-collapse: collapse;
+    width: 50%;
+    position: relative;
+    margin: 20px auto;
+    border: 1px solid #ffbd7d;
+    border-radius: 10px;
+    font-family: 'Arial', sans-serif;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #ffbd7d;
+    font-family: 'Verdana', sans-serif;
+}
+
+th {
+    background-color: #ffbd7d;
+    color: #6d362b;
+    font-family: 'Georgia', serif;
+}
+
+/* Estilos para linhas alternadas */
+tr:nth-child(even) {
+    background-color: #fce4cc;
+}
+
+/* Estilos para a primeira linha (cabeçalho) */
+tr:first-child {
+    background-color: #ff8a4c;
+    color: #fff;
+}
+
+/* Estilos para links de ação */
+.acao-link {
+    color: #ff8a4c;
+    text-decoration: none;
+}
+
+.acao-link:hover {
+    color: #ff5722;
+}
+
+/* Estilos para os botões de página */
+.pagina-link {
+    background-color: #ffbd7d;
+    color: #6d362b;
+    padding: 6px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: 'Times New Roman', serif;
+}
+
+.pagina-link:hover {
+    background-color: #ff8a4c;
+    color: #fff;
+}
+
+/* Estilos para o título */
+h1 {
+    background-color: #ff8a4c;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    font-family: 'Script MT Bold', cursive;
+}
+
+/* Estilos para a navegação de página */
+.pagina-navegacao {
+    text-align: center;
+    margin-top: 20px;
+}
+.pagina-link-dots {
+    font-weight: bold;
+}

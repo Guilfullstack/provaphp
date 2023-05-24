@@ -1,6 +1,5 @@
 <?php
-    //require_once 'src/conexao.php';
-    require_once 'src/produto.service.php';
+    require_once 'pagina/src/produto.service.php';
 
     // Verifica se o formulário foi enviado
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {

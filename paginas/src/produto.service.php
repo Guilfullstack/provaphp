@@ -71,24 +71,48 @@ public function alterarProduto($id, $novoNome, $novaMarca)
     return $stmt->rowCount() > 0; // Retorna true se alguma linha foi afetada
 }
 //REMOVER PRODUTO
-public function removerProduto($id)
+public function removerProduto($cod_produto)
 {
     $query = "DELETE FROM tb_produtos WHERE cod_prodtuto = :cod_prodtuto";
     $stmt = $this->conexao->Conectar()->prepare($query);
-    $stmt->bindValue(':cod_prodtuto', $id);
+    $stmt->bindValue(':cod_prodtuto', $cod_produto);
     $stmt->execute();
 
     return $stmt->rowCount() > 0; // Retorna true se alguma linha foi afetada
 }
 
-public function listarProdutos()
+public function listarProdutos($quantidadePorPagina)
 {
     $query = "SELECT * FROM tb_produtos";
     $stmt = $this->conexao->Conectar()->prepare($query);
     $stmt->execute();
 
     $produtos = $stmt->fetchAll(PDO::FETCH_ASSOC);
-    return $produtos;
+    $totalProdutos = count($produtos);
+    $totalPaginas = ceil($totalProdutos / $quantidadePorPagina);
+
+    // Verificar se há uma página específica sendo solicitada
+    if (isset($_GET['pagina'])) {
+        $paginaAtual = $_GET['pagina'];
+    } else {
+        $paginaAtual = 1;
+    }
+
+    // Calcular o offset para a página atual
+    $offset = ($paginaAtual - 1) * $quantidadePorPagina;
+
+    // Consulta modificada para retornar apenas a quantidade desejada de produtos
+    $queryPaginada = "SELECT * FROM tb_produtos LIMIT $quantidadePorPagina OFFSET $offset";
+    $stmtPaginada = $this->conexao->Conectar()->prepare($queryPaginada);
+    $stmtPaginada->execute();
+
+    $produtosPaginados = $stmtPaginada->fetchAll(PDO::FETCH_ASSOC);
+
+    return [
+        'produtos' => $produtosPaginados,
+        'totalPaginas' => $totalPaginas,
+        'paginaAtual' => $paginaAtual
+    ];
 }
 
 }
