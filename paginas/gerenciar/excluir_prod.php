@@ -1,7 +1,7 @@
 <!-- excluir_prod.php -->
 
 <?php
-require 'paginas/src/produto.service.php';
+require '../src/produto.service.php';
 
 if (isset($_GET['cod_produto'])) {
     $cod_produto = $_GET['cod_produto'];
