@@ -1,12 +1,12 @@
 <?php
-    require_once 'pagina/src/produto.service.php';
+    require_once 'paginas/src/produto.service.php';
 
     // Verifica se o formulário foi enviado
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Obtém os dados do formulário
-        $id = $_POST['id'];
-        $novoNome = $_POST['novoNome'];
-        $novaMarca = $_POST['novaMarca'];
+        $id = $_POST['cod_prodtuto'];
+        $novoNome = $_POST['nome_produto'];
+        $novaMarca = $_POST['marca_produto'];
 
         // Cria uma instância do serviço de produto
         $produtoService = new ProdutoService();

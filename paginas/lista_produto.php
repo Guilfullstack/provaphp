@@ -85,7 +85,7 @@
         </p>
         <form action="" method="post">
         <tr class="pagina-navegacao">
-            <th><a href="inserir_prod.html">Cadastrar</a></th>
+            <th><a href="alterar_prod.html">Alterar</a></th>
             <th><input type="submit" value="Alterar"></th>
             <th><input type="button" value="Remover"></th>
         </tr>
