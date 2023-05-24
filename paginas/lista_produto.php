@@ -83,14 +83,6 @@
         Páginas:
         <?php echo exibirBotoesPagina($paginaAtual, $totalPaginas); ?>
         </p>
-        <form action="" method="post">
-        <tr class="pagina-navegacao">
-            <th><a href="alterar_prod.html">Alterar</a></th>
-            <th><input type="submit" value="Alterar"></th>
-            <th><input type="button" value="Remover"></th>
-        </tr>
-        </form>
-        
     </div>
 </body>
 </html>
