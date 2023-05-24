@@ -7,7 +7,7 @@ body {
     align-self: center;
   }
   header {
-    background-color: #3e3e3e;
+    background-color: black;
     color: #ffffff;
     display: flex;
     align-items: center;
@@ -22,24 +22,24 @@ body {
     height: 150px;
     margin-right: 20px;
   }
-  footer {
-    background-color: #3e3e3e;
-    color: #ffffff;
-    padding: 20px;
-    text-align: center;
-  }
+  
   .container{
     background-color: blue;
   }
   p{
     font-size: 30px;
+    color: white;
   }
   ul{
     font-size: 30px;
   }
   .menu{
-    background-color: #3e3e3e;
+    background-color: black;
   }
   .det{
     height: 420px;
+  }
+  a{
+    font-size: large;
+    color: green;
   }
