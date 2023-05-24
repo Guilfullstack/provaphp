@@ -32,7 +32,7 @@ class ProdutoService {
     $stmtSalvar->bindValue(':nome_produto', $produto->__get('nome_produto')); 
     $stmtSalvar->bindValue(':marca_produto', $produto->__get('marca_produto')); 
     $stmtSalvar->execute();
-    echo ' <center><h1>Cadastrado com sucesso</h1></center>';
+    echo '<center><h1>Cadastrado com sucesso</h1></center>';
 }
 
 
