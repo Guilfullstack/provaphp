@@ -7,6 +7,9 @@ body {
   align-self: center;
   background-color: #f7f7f7;
 }
+.gerenciamento{
+ font-weight: bold;
+}
 
 header {
   background-color: #e5c1a6;
