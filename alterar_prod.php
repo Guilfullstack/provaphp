@@ -13,7 +13,7 @@
 
         // Chama a função de alterarProduto()
         if ($produtoService->alterarProduto($id, $novoNome, $novaMarca)) {
-            echo "Produto alterado com sucesso!";
+            echo "<center><h1>Produto alterado com Sucesso!</h1></center>";
         } else {
             echo "Erro ao alterar o produto.";
         }
