@@ -12,7 +12,7 @@
     $produtoService = new ProdutoService();
 
     // Define a quantidade de produtos por página
-    $quantidadePorPagina = 1;
+    $quantidadePorPagina = 5;
 
     // Chama a função de listarProdutos()
     $dadosProdutos = $produtoService->listarProdutos($quantidadePorPagina);
@@ -83,6 +83,14 @@
         Páginas:
         <?php echo exibirBotoesPagina($paginaAtual, $totalPaginas); ?>
         </p>
+        <form action="" method="post">
+        <tr class="pagina-navegacao">
+            <th><a href="inserir_prod.html">Cadastrar</a></th>
+            <th><input type="submit" value="Alterar"></th>
+            <th><input type="button" value="Remover"></th>
+        </tr>
+        </form>
+        
     </div>
 </body>
 </html>
